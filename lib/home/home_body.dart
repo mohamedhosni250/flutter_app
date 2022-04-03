@@ -110,7 +110,7 @@ class _HomeBodyState extends State<HomeBody> {
                     //text container
                     Expanded(
                       child: Container(
-                        height: 100,
+                        height: 120,
                         width: 200,
                         decoration: BoxDecoration(
                             color: Colors.white,
