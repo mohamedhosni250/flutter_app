@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/home/home_body.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/widgets/primary_text.dart';
 import 'package:food_delivery/widgets/small_text.dart';
+
+import 'home_body.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

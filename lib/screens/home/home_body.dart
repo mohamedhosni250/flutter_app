@@ -87,7 +87,6 @@ class _HomeBodyState extends State<HomeBody> {
           height: 20,
         ),
         Container(
-          height: 900,
           child: ListView.builder(
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
@@ -110,6 +109,7 @@ class _HomeBodyState extends State<HomeBody> {
                     //text container
                     Expanded(
                       child: Container(
+                        padding: EdgeInsets.only(left: 10, right: 10),
                         height: 120,
                         width: 200,
                         decoration: BoxDecoration(
@@ -117,11 +117,43 @@ class _HomeBodyState extends State<HomeBody> {
                             borderRadius: BorderRadius.only(
                                 topRight: Radius.circular(20),
                                 bottomRight: Radius.circular(20))),
-                        child: Column(children: [
-                          PrimaryTexy(
-                            text: 'The Main Meal Of Our REsturent',
-                          )
-                        ]),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              PrimaryTexy(
+                                text: 'The Main Meal Of Our Resturent',
+                                color: Colors.black54,
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              SmallText(
+                                text: 'this meal Our favorite from china',
+                                color: Colors.black38,
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: const [
+                                  IconTextWidget(
+                                      icon: Icons.circle_sharp,
+                                      text: 'Normal',
+                                      color: AppColors.iconColor1),
+                                  IconTextWidget(
+                                      icon: Icons.location_on,
+                                      text: '1.7 KM',
+                                      color: AppColors.mainColor),
+                                  IconTextWidget(
+                                      icon: Icons.access_time_rounded,
+                                      text: '30 Min',
+                                      color: AppColors.iconColor2),
+                                ],
+                              ),
+                            ]),
                       ),
                     )
                   ]),
