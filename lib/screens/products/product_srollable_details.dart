@@ -4,6 +4,7 @@ import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/widgets/primary_text.dart';
 
 import '../../widgets/app_icon.dart';
+import '../../widgets/icon_text_widget.dart';
 
 class ScrollableProductHeader extends StatelessWidget {
   const ScrollableProductHeader({Key? key}) : super(key: key);
@@ -55,13 +56,34 @@ class ScrollableProductHeader extends StatelessWidget {
             child: Column(
           children: [
             Container(
+              margin: EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  IconTextWidget(
+                      icon: Icons.circle_sharp,
+                      text: 'Normal',
+                      color: AppColors.iconColor1),
+                  IconTextWidget(
+                      icon: Icons.location_on,
+                      text: '1.7 KM',
+                      color: AppColors.mainColor),
+                  IconTextWidget(
+                      icon: Icons.access_time_rounded,
+                      text: '30 Min',
+                      color: AppColors.iconColor2),
+                ],
+              ),
+            ),
+            Container(
               margin: const EdgeInsets.only(left: 20, right: 20),
               child: const ExpandableText(
                 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolo consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolo consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolo consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolo consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolo consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolo consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolo consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidu consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolo consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolo consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolont ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
                 expandText: 'show more',
                 collapseText: 'show less',
-                maxLines: 4,
-                linkColor: Colors.blue,
+                maxLines: 7,
+                style: TextStyle(height: 1.8),
+                linkColor: AppColors.mainColor,
               ),
             )
           ],
@@ -82,6 +104,7 @@ class ScrollableProductHeader extends StatelessWidget {
                 PrimaryTexy(
                   text: '20.88 LE * 0 ',
                   color: Colors.black45,
+                  size: 25,
                 ),
                 const AppIcon(
                     backgroundColor: AppColors.mainColor,
@@ -97,31 +120,41 @@ class ScrollableProductHeader extends StatelessWidget {
                   topRight: Radius.circular(20), topLeft: Radius.circular(20)),
               color: AppColors.buttonBackgroundColor,
             ),
-            child: Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(left: 20),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white,
+            child: Container(
+              padding: EdgeInsets.only(left: 20, right: 20),
+              margin: EdgeInsets.only(left: 20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: const AppIcon(
+                      backgroundColor: Colors.white,
+                      icon: Icons.favorite,
+                      iconColor: AppColors.mainColor,
+                    ),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      AppIcon(
-                        backgroundColor: Colors.white,
-                        icon: Icons.favorite,
-                        iconColor: AppColors.mainColor,
-                      ),
-                      Container(
-                        child: PrimaryTexy(
-                          text: '28 LE | Add To Cart',
-                        ),
-                      )
-                    ],
+                  const SizedBox(
+                    width: 10,
                   ),
-                )
-              ],
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: AppColors.mainColor,
+                    ),
+                    padding: const EdgeInsets.all(20),
+                    child: PrimaryTexy(
+                      text: '28 LE | Add To Cart',
+                      color: Colors.white,
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ],

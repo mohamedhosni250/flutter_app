@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/home/main_screen_layout.dart';
 import 'package:food_delivery/screens/products/product_single_page.dart';
 import 'package:food_delivery/screens/products/product_srollable_details.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const ScrollableProductHeader(),
+      home: const HomePage(),
     );
   }
 }
