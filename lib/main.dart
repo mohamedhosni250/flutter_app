@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/screens/home/main_screen_layout.dart';
-import 'package:food_delivery/screens/products/product_single_page.dart';
-import 'package:food_delivery/screens/products/product_srollable_details.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
-void main() {
+import 'helper/dependencies.dart' as dep;
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dep.init();
   runApp(const MyApp());
 }
 
